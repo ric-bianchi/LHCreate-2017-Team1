@@ -37,6 +37,12 @@ void setup() {
 }
 
 void draw() {
+  String[] values= loadStrings("controller.txt");
+  for(int i=0;i<4;i++){
+    leftx[i] = values[i].charAt(0);
+    rightx[i] = values[i+4].charAt(0);
+  }
+  
   line(width/2, height/(MaxSegments-1), width/2, height);
   bezier(float(0), height/(MaxSegments-.5), float(width/2), float(height/(MaxSegments-1)), float(width/2), float(height/(MaxSegments-1)), float(width), height/(MaxSegments-.5));  
 fill(random(0,255), random(0,255), random(0,255));
